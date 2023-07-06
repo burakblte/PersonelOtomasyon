@@ -30,6 +30,7 @@ type
     rctpassword: TRectangle;
     Label3: TLabel;
     Label4: TLabel;
+    Rectangle1: TRectangle;
 
     procedure FormCreate(Sender: TObject);
     procedure rctloginClick(Sender: TObject);
