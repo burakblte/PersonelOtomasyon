@@ -1,0 +1,437 @@
+﻿object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 575
+  ClientWidth = 865
+  Fill.Color = xFF112F4A
+  Fill.Kind = Solid
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Button1: TButton
+    Position.X = 1040.000000000000000000
+    Position.Y = 376.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'KAYDET'
+  end
+  object Button2: TButton
+    Position.X = 1040.000000000000000000
+    Position.Y = 424.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'S'#304'L'
+  end
+  object Button3: TButton
+    Position.X = 1040.000000000000000000
+    Position.Y = 472.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 30.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'G'#220'NCELLE'
+  end
+  object RectAnimation1: TRectAnimation
+    Duration = 0.200000002980232200
+  end
+  object grppersonad: TGroupBox
+    StyledSettings = [Size, Other]
+    Position.X = 32.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Personel Ad'#305
+    TextSettings.Font.Family = 'Montserrat'
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    TextSettings.FontColor = claAliceblue
+    TabOrder = 9
+    object adi: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      StyleLookup = 'transparentedit'
+      TabOrder = 36
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claAliceblue
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Size, Style]
+    end
+  end
+  object grppersonid: TGroupBox
+    StyledSettings = [Other]
+    Position.X = 32.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Personel ID'
+    TextSettings.Font.Family = 'Montserrat'
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    TextSettings.FontColor = claAliceblue
+    TabOrder = 8
+    object id: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      StyleLookup = 'transparentedit'
+      TabOrder = 36
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claAliceblue
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Padding.Left = 10.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Size, Style]
+    end
+  end
+  object grppersonyas: TGroupBox
+    StyledSettings = [Size, Other]
+    Position.X = 32.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Personel Ya'#351
+    TextSettings.Font.Family = 'Montserrat'
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    TextSettings.FontColor = claAliceblue
+    TabOrder = 15
+    object yas: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      StyleLookup = 'transparentedit'
+      TabOrder = 36
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claAliceblue
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Size, Style]
+    end
+  end
+  object grppersoncins: TGroupBox
+    StyledSettings = [Size, Other]
+    Position.X = 32.000000000000000000
+    Position.Y = 264.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Personel Cinsiyet'
+    TextSettings.Font.Family = 'Montserrat'
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    TextSettings.FontColor = claAliceblue
+    TabOrder = 14
+    object cinsiyet: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      StyleLookup = 'transparentedit'
+      TabOrder = 36
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claAliceblue
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Size, Style]
+    end
+  end
+  object RectAnimation2: TRectAnimation
+    Duration = 0.200000002980232200
+  end
+  object grppersonsoyad: TGroupBox
+    StyledSettings = [Size, Other]
+    Position.X = 32.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Personel Soyad'#305
+    TextSettings.Font.Family = 'Montserrat'
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    TextSettings.FontColor = claAliceblue
+    TabOrder = 13
+    object soyadi: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      StyleLookup = 'transparentedit'
+      TabOrder = 36
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.FontColor = claAliceblue
+      Position.X = 24.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Size, Style]
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Position.X = 48.000000000000000000
+    Position.Y = 352.000000000000000000
+    Size.Width = 729.000000000000000000
+    Size.Height = 145.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 33
+    ColumnCollection = <
+      item
+        Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = Absolute
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        ColumnSpan = 2
+        Control = Rectangle1
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = Rectangle2
+        Row = 1
+      end
+      item
+        Column = 1
+        Control = Rectangle3
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = Rectangle4
+        Row = 2
+      end
+      item
+        Column = 1
+        Control = Rectangle5
+        Row = 2
+      end
+      item
+        Column = 0
+        Control = Rectangle6
+        Row = 3
+      end
+      item
+        Column = 1
+        Control = Rectangle7
+        Row = 3
+      end>
+    RowCollection = <
+      item
+        SizeStyle = Auto
+        Value = 10.000000000000000000
+      end
+      item
+        Value = 34.299199962577760000
+      end
+      item
+        Value = 34.130214840578990000
+      end
+      item
+        Value = 31.570585196843250000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object Rectangle1: TRectangle
+      Align = Client
+      Fill.Color = xFFE77070
+      Size.Width = 729.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Rectangle2: TRectangle
+      Align = Client
+      Size.Width = 679.000000000000000000
+      Size.Height = 32.584243774414060000
+      Size.PlatformDefault = False
+    end
+    object Rectangle3: TRectangle
+      Anchors = []
+      Fill.Color = xFF00D0C2
+      Position.X = 679.000000000000000000
+      Position.Y = 50.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 32.584243774414060000
+      Size.PlatformDefault = False
+      Stroke.Color = xFFCA0303
+    end
+    object Rectangle4: TRectangle
+      Align = Client
+      Size.Width = 679.000000000000000000
+      Size.Height = 32.423706054687500000
+      Size.PlatformDefault = False
+    end
+    object Rectangle5: TRectangle
+      Anchors = []
+      Position.X = 679.000000000000000000
+      Position.Y = 82.584243774414060000
+      Size.Width = 50.000000000000000000
+      Size.Height = 32.423706054687500000
+      Size.PlatformDefault = False
+    end
+    object Rectangle6: TRectangle
+      Align = Client
+      Size.Width = 679.000000000000000000
+      Size.Height = 29.992050170898440000
+      Size.PlatformDefault = False
+    end
+    object Rectangle7: TRectangle
+      Anchors = []
+      Position.X = 679.000000000000000000
+      Position.Y = 115.007949829101600000
+      Size.Width = 50.000000000000000000
+      Size.Height = 29.992050170898440000
+      Size.PlatformDefault = False
+    end
+  end
+  object rctsil: TRectangle
+    Fill.Color = xFF119999
+    Position.X = 232.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 16.500000000000000000
+    OnClick = rctsilClick
+    object Label2: TLabel
+      Align = Center
+      StyledSettings = []
+      Size.Width = 30.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claAntiquewhite
+      Text = 'Sil'
+      TabOrder = 0
+    end
+  end
+  object rctkaydet: TRectangle
+    Fill.Color = xFF119999
+    Position.X = 232.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 16.500000000000000000
+    OnClick = rctkaydetClick
+    object Label1: TLabel
+      Align = Center
+      StyledSettings = []
+      Size.Width = 68.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claAntiquewhite
+      Text = 'Kaydet'
+      TabOrder = 0
+    end
+  end
+  object rctgüncelle: TRectangle
+    Fill.Color = xFF119999
+    Position.X = 232.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 16.500000000000000000
+    OnClick = rctgüncelleClick
+    object Label3: TLabel
+      Align = Center
+      StyledSettings = []
+      Size.Width = 86.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Montserrat'
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claAntiquewhite
+      Text = 'G'#252'ncelle'
+      TabOrder = 0
+    end
+  end
+  object grdPersonel: TGridPanelLayout
+    Position.X = 472.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 377.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 50
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <>
+    RowCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=Personeller;Data Source=BURAKAHMET\SQLE' +
+      'XPRESS'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 400
+    Top = 88
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM PERSONEL')
+    Left = 400
+    Top = 24
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 392
+    Top = 208
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ADOQuery1
+    ScopeMappings = <>
+    Left = 392
+    Top = 264
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 396
+    Top = 149
+  end
+end

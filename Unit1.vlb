@@ -1,0 +1,14 @@
+﻿[Form2.ADOQuery1]
+Visible=False
+Coordinates=234,1,107,33
+
+[Form2.DataSource1]
+Coordinates=24,140,111,33
+
+[Form2.BindSourceDB1]
+Coordinates=10,10,127,159
+ExplicitSubNodes=
+
+[]
+Coordinates=116,179,53,51
+

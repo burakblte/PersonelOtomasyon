@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.578,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWS.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.187,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Builder.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.652,=C:\Users\teama\OneDrive\Masaüstü\SSS\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.531,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWK.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.370,=C:\Users\teama\OneDrive\Masaüstü\SSS\LicenceEntities.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.328,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.Builder.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.281,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Context.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.453,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWA.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.218,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Consumer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.169,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Signing.Base.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.469,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWA.Signing.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.185,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Signing.ECDSA.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.359,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWA.Compression.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.516,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWE.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.635,C:\Users\teama\OneDrive\Masaüstü\SSS\Project1.dproj=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.091,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Hashing.HMAC.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.641,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.Parts.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.406,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWA.Factory.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.138,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.OpenSSL.Headers.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.216,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Signing.RSA.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.609,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWT.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.279,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Types.Bytes.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.391,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.JWA.Encryption.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.860,C:\Users\teama\OneDrive\Masaüstü\SSS\Unit1.pas=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.112,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.117,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.867,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.232,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Types.Arrays.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.294,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Types.JSON.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.250,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Consumer.Validators.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.354,=C:\Users\teama\OneDrive\Masaüstü\SSS\ElAES.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.385,=C:\Users\teama\OneDrive\Masaüstü\SSS\LicenceHelper.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.656,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Producer.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.365,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.325,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Types.Utils.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.075,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\Common\JOSE.Encoding.Base64.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.312,=C:\Users\teama\OneDrive\Masaüstü\SSS\JWTLib\JOSE\JOSE.Core.Base.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.860,C:\Users\teama\OneDrive\Masaüstü\SSS\Unit1.fmx=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.714,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.679,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.694,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.451,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.452,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.329,=C:\Users\teama\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
