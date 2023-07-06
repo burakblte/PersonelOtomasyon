@@ -9,7 +9,7 @@ uses
   FMX.ScrollBox, FMX.Grid, Data.DB, Data.Win.ADODB, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, FMX.Ani, FMX.Objects,
-  System.ImageList, FMX.ImgList, FMX.Layouts, System.Generics.Collections;
+  System.ImageList, FMX.ImgList, FMX.Layouts, System.Generics.Collections,fMx.MultiResBitmap;
 
 type
 
@@ -66,6 +66,8 @@ type
     Rectangle5: TRectangle;
     Rectangle6: TRectangle;
     Rectangle7: TRectangle;
+    Image1: TImage;
+    imgIconList: TImageList;
     procedure rctkaydetClick(Sender: TObject);
     procedure rctsilClick(Sender: TObject);
     procedure rctgüncelleClick(Sender: TObject);
@@ -73,6 +75,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure LoadData;
     procedure DesignPersonelPage(APersonels: TList<TPersonel>; AColumnName :string);
+    procedure PersonelUpdate(Sender: TObject);
 
   private
     { Private declarations }
@@ -138,7 +141,6 @@ function TForm2.AddPersonelToList(APersonelID, APersonelYas: integer;
 
 procedure TForm2.DesignPersonelPage(APersonels:TList<TPersonel>;AColumnName :string);
 var
-  size: TSize;
   rctAlan, rctButton: TRectangle;
   lblAlan: TLabel;
   imgButton: TImage;
@@ -148,27 +150,29 @@ var
   LColumn: TGridPanelLayout.TColumnItem; //SÜTUN
   i: Integer;
   LRow: TGridPanelLayout.TRowItem; //SATIR
+  item: TCustomBitmapItem;
+  size: TSize;
 
 begin
 
-  grdpersonel.RowCollection.Clear; //gridpanel satýrlarýný siler.
+  grdPersonel.RowCollection.Clear; //gridpanel satýrlarýný siler.
   grdpersonel.ColumnCollection.Clear; //gridpanel sütunlarýný siler.
   rowcount := APersonels.Count+1; //satýr sayýsý bilinmediðinden deðiþken oluþturduk.
 
-  grdpersonel.ColumnCollection.Add;
-  grdpersonel.ColumnCollection.Add;
+  grdPersonel.ColumnCollection.Add;
+  grdPersonel.ColumnCollection.Add;
   grdPersonel.ColumnCollection.BeginUpdate;
-  grdpersonel.ColumnCollection.Items[0].SizeStyle := TGridPanelLayout.TSizeStyle.Percent;
-  grdpersonel.ColumnCollection.Items[1].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
-  grdpersonel.ColumnCollection.Items[0].Value := 100;
-  grdpersonel.ColumnCollection.Items[1].Value := 50;
+  grdPersonel.ColumnCollection.Items[0].SizeStyle := TGridPanelLayout.TSizeStyle.Percent;
+  grdPersonel.ColumnCollection.Items[1].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
+  grdPersonel.ColumnCollection.Items[0].Value := 100;
+  grdPersonel.ColumnCollection.Items[1].Value := 50;
   grdPersonel.ColumnCollection.EndUpdate;
 
 
-  grdpersonel.RowCollection.BeginUpdate; //her satýrda güncelleme yapar.
-  for i := 0 to APersonels.Count do
+  grdPersonel.RowCollection.BeginUpdate; //her satýrda güncelleme yapar.
+  for i := 0 to APersonels.Count  do
   begin
-    LRow := grdpersonel.RowCollection.Add; //satýr ekledik.
+    LRow := grdPersonel.RowCollection.Add; //satýr ekledik.
     LRow.SizeStyle := TGridPanelLayout.TSizeStyle.Absolute; //size style.
     LRow.Value := 50; //size style deðeri verdik.
 
@@ -176,9 +180,17 @@ begin
     rctalan.Align := TAlignLayout.Client;
     rctAlan.Parent := grdPersonel;
     rctalan.Width := 150;
-    rctalan.XRadius := 15;
-    rctalan.YRadius := 15;
+    rctalan.XRadius := 0;
+    rctalan.YRadius := 0;
     rctalan.Stroke.Thickness := 0;
+
+    rctbutton := TRectangle.Create(self);
+    rctbutton.Align := TAlignlayout.Client;
+    rctbutton.Parent := grdPersonel;
+    rctbutton.Width := 100;
+    rctbutton.XRadius := 0;
+    rctbutton.YRadius := 0;
+    rctbutton.Stroke.Thickness := 0;
 
     lblAlan := TLabel.Create(Self); //label create ettik.
     lblalan.Parent := rctalan; //label'i gride attýk.
@@ -189,21 +201,37 @@ begin
     lblAlan.Font.Family := 'Roboto';
 
     lytButton := TLayout.Create(Self);
-    lytButton.Parent := grdpersonel;
+    lytButton.Parent := rctbutton;
     lytButton.Align := TAlignLayout.Client;
     lytButton.Margins.Rect := TRectF.Create(2,4,2,4);
     lytButton.HitTest := True;
 
+    lytButton.OnClick := PersonelUpdate;
+
+
     if i=0 then
     begin
       lblAlan.Text := 'Personel Adý';
-      grdPersonel.ControlCollection[i].ColumnSpan := 2;
+      grdPersonel.ControlCollection[0].ColumnSpan := 2;
     end
     else
+    begin
       lblAlan.Text := APersonels.Items[i-1].Personel_adi;
+      lytButton.Hint :=  APersonels.Items[i-1].Personel_adi;
+      lytButton.Tag := APersonels.Items[i-1].Personel_id;
+
+      imgButton := TImage.Create(self);
+      imgButton.Parent := lytbutton;
+      imgButton.Align := TAlignLayout.Client;
+      imgButton.Margins.Rect := TRectF.Create(12, 12, 12, 12);
+      imgIconList.BitmapItemByName('updateBlack', item, size);
+      imgButton.Bitmap := item.MultiResBitmap.Bitmaps[1.0];
+    end;
+
 
   end;
-  grdpersonel.RowCollection.EndUpdate; //her satýrda güncellemeyi sonlandýrýr.
+
+  grdPersonel.RowCollection.EndUpdate; //her satýrda güncellemeyi sonlandýrýr.
 
 end;
 
@@ -230,6 +258,11 @@ begin
   );
   Adoquery1.Next;
  end;
+end;
+
+procedure TForm2.PersonelUpdate(Sender: TObject);
+begin
+//
 end;
 
 procedure TForm2.rctgüncelleClick(Sender: TObject);
