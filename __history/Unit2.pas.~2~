@@ -180,6 +180,7 @@ begin
     rctalan.YRadius := 0;
     rctalan.Stroke.Thickness := 0;
 
+
     rctbutton := TRectangle.Create(self);
     rctbutton.Align := TAlignlayout.Client;
     rctbutton.Parent := grdPersonel;

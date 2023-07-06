@@ -300,7 +300,7 @@
     end
   end
   object rctsil: TRectangle
-    Fill.Color = xFF13B7B7
+    Fill.Color = xFF119999
     Position.X = 232.000000000000000000
     Position.Y = 144.000000000000000000
     Size.Width = 105.000000000000000000
