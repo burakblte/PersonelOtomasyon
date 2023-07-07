@@ -178,127 +178,6 @@
       StyledSettings = [Size, Style]
     end
   end
-  object GridPanelLayout1: TGridPanelLayout
-    Position.X = 48.000000000000000000
-    Position.Y = 352.000000000000000000
-    Size.Width = 729.000000000000000000
-    Size.Height = 145.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 33
-    ColumnCollection = <
-      item
-        Value = 100.000000000000000000
-      end
-      item
-        SizeStyle = Absolute
-        Value = 50.000000000000000000
-      end>
-    ControlCollection = <
-      item
-        Column = 0
-        ColumnSpan = 2
-        Control = Rectangle1
-        Row = 0
-      end
-      item
-        Column = 0
-        Control = Rectangle2
-        Row = 1
-      end
-      item
-        Column = 1
-        Control = Rectangle3
-        Row = 1
-      end
-      item
-        Column = 0
-        Control = Rectangle4
-        Row = 2
-      end
-      item
-        Column = 1
-        Control = Rectangle5
-        Row = 2
-      end
-      item
-        Column = 0
-        Control = Rectangle6
-        Row = 3
-      end
-      item
-        Column = 1
-        Control = Rectangle7
-        Row = 3
-      end>
-    RowCollection = <
-      item
-        SizeStyle = Auto
-        Value = 10.000000000000000000
-      end
-      item
-        Value = 34.299199962577760000
-      end
-      item
-        Value = 34.130214840578990000
-      end
-      item
-        Value = 31.570585196843250000
-      end
-      item
-        SizeStyle = Auto
-      end>
-    object Rectangle1: TRectangle
-      Align = Client
-      Fill.Color = xFFE77070
-      Size.Width = 729.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object Rectangle2: TRectangle
-      Align = Client
-      Size.Width = 679.000000000000000000
-      Size.Height = 32.584243774414060000
-      Size.PlatformDefault = False
-    end
-    object Rectangle3: TRectangle
-      Anchors = []
-      Fill.Color = xFF00D0C2
-      Position.X = 679.000000000000000000
-      Position.Y = 50.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 32.584243774414060000
-      Size.PlatformDefault = False
-      Stroke.Color = xFFCA0303
-    end
-    object Rectangle4: TRectangle
-      Align = Client
-      Size.Width = 679.000000000000000000
-      Size.Height = 32.423706054687500000
-      Size.PlatformDefault = False
-    end
-    object Rectangle5: TRectangle
-      Anchors = []
-      Position.X = 679.000000000000000000
-      Position.Y = 82.584243774414060000
-      Size.Width = 50.000000000000000000
-      Size.Height = 32.423706054687500000
-      Size.PlatformDefault = False
-    end
-    object Rectangle6: TRectangle
-      Align = Client
-      Size.Width = 679.000000000000000000
-      Size.Height = 29.992050170898440000
-      Size.PlatformDefault = False
-    end
-    object Rectangle7: TRectangle
-      Anchors = []
-      Position.X = 679.000000000000000000
-      Position.Y = 115.007949829101600000
-      Size.Width = 50.000000000000000000
-      Size.Height = 29.992050170898440000
-      Size.PlatformDefault = False
-    end
-  end
   object rctsil: TRectangle
     Fill.Color = xFF13B7B7
     Position.X = 232.000000000000000000
@@ -380,7 +259,7 @@
     Size.Width = 377.000000000000000000
     Size.Height = 73.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 50
+    TabOrder = 49
     ColumnCollection = <
       item
         Value = 50.000000000000000000
@@ -403,6 +282,176 @@
       end>
     Position.X = 408.000000000000000000
     Position.Y = 264.000000000000000000
+  end
+  object lytDetail: TLayout
+    Align = Client
+    HitTest = True
+    Size.Width = 865.000000000000000000
+    Size.Height = 575.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 3
+    object rctDetailScrim: TRectangle
+      Align = Client
+      Fill.Color = claBlack
+      HitTest = False
+      Opacity = 0.300000011920929000
+      Size.Width = 865.000000000000000000
+      Size.Height = 575.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object rctDetail: TRectangle
+      Align = Center
+      Fill.Color = claWhite
+      Size.Width = 340.000000000000000000
+      Size.Height = 301.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 28.000000000000000000
+      YRadius = 28.000000000000000000
+      object sheDialog: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.800000011920929000
+        Opacity = 0.400000005960464500
+        ShadowColor = claBlack
+      end
+      object AnimDetailWidth: TFloatAnimation
+        Duration = 0.150000005960464500
+        PropertyName = 'Width'
+        StartValue = 0.000000000000000000
+        StopValue = 350.000000000000000000
+      end
+      object AnimDetailHeight: TFloatAnimation
+        Duration = 0.150000005960464500
+        PropertyName = 'Height'
+        StartValue = 0.000000000000000000
+        StopValue = 300.000000000000000000
+      end
+      object rctDialogContext: TRectangle
+        Align = Client
+        Fill.Color = claWhite
+        HitTest = False
+        Padding.Left = 24.000000000000000000
+        Padding.Top = 24.000000000000000000
+        Padding.Right = 24.000000000000000000
+        Padding.Bottom = 24.000000000000000000
+        Size.Width = 340.000000000000000000
+        Size.Height = 301.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Thickness = 0.000000000000000000
+        XRadius = 28.000000000000000000
+        YRadius = 28.000000000000000000
+        object lytDialogButtons: TLayout
+          Align = Bottom
+          HitTest = True
+          Position.X = 24.000000000000000000
+          Position.Y = 227.000000000000000000
+          Size.Width = 292.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object lytDialogCopy: TLayout
+            Align = Right
+            HitTest = True
+            Margins.Top = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 217.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 75.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            OnClick = lytDialogCopyClick
+            object lblDialogCopy: TLabel
+              Align = Client
+              Anchors = []
+              StyledSettings = []
+              Margins.Top = 10.000000000000000000
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 75.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Roboto'
+              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.StyleExt = {00050000000000000004000000}
+              TextSettings.FontColor = xFF6750A4
+              TextSettings.HorzAlign = Center
+              Text = 'Kaydet'
+              TabOrder = 0
+            end
+          end
+          object lytDialogClose: TLayout
+            Align = Left
+            HitTest = True
+            Margins.Top = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 75.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnClick = HideDetailModal
+            object lblDialogClose: TLabel
+              Align = Client
+              Anchors = []
+              StyledSettings = []
+              Margins.Top = 10.000000000000000000
+              Margins.Bottom = 10.000000000000000000
+              Size.Width = 75.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Family = 'Roboto'
+              TextSettings.Font.Size = 14.000000000000000000
+              TextSettings.Font.StyleExt = {00050000000000000004000000}
+              TextSettings.FontColor = xFF6750A4
+              TextSettings.HorzAlign = Center
+              Text = 'Kapat'
+              TabOrder = 0
+            end
+          end
+        end
+      end
+    end
+  end
+  object Rectangle1: TRectangle
+    Position.X = 424.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 281.000000000000000000
+    Size.Height = 241.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    object GroupBox1: TGroupBox
+      Align = Top
+      Padding.Left = 5.000000000000000000
+      Padding.Top = 20.000000000000000000
+      Padding.Right = 5.000000000000000000
+      Padding.Bottom = 5.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'zsdzsdzs'
+      TabOrder = 0
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        StyleLookup = 'transparentedit'
+        TabOrder = 38
+        Text = 'zsddzsdzsds'
+        Size.Width = 271.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object GroupBox2: TGroupBox
+      Align = Top
+      Position.Y = 65.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 100.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'sddzs'
+      TabOrder = 1
+    end
   end
   object ADOConnection1: TADOConnection
     Connected = True
