@@ -15,7 +15,7 @@ Coordinates=60,10,84,36
 Visible=False
 
 []
-Coordinates=527,298,80,58
+Coordinates=66,109,118,36
 Visible=True
 
 [DataSource1]
@@ -29,9 +29,6 @@ Coordinates=310,148,91,36
 
 [rctsil]
 Coordinates=439,133,42,36
-
-[GridPanelLayout1]
-Coordinates=66,109,118,36
 
 [cinsiyet]
 Coordinates=439,1,58,58
@@ -86,7 +83,4 @@ Coordinates=24,242,87,58
 
 [yas]
 Coordinates=0,0,40,58
-
-[Rectangle1]
-Coordinates=438,299,80,36
 
