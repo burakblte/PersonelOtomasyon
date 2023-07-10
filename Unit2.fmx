@@ -254,7 +254,7 @@
     end
   end
   object grdPersonel: TGridPanelLayout
-    Position.X = 472.000000000000000000
+    Position.X = 480.000000000000000000
     Position.Y = 40.000000000000000000
     Size.Width = 377.000000000000000000
     Size.Height = 73.000000000000000000
@@ -289,7 +289,6 @@
     Size.Width = 865.000000000000000000
     Size.Height = 575.000000000000000000
     Size.PlatformDefault = False
-    Visible = False
     TabOrder = 3
     object rctDetailScrim: TRectangle
       Align = Client
