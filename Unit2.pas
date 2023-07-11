@@ -10,7 +10,7 @@ uses
   Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, FMX.Ani, FMX.Objects,
   System.ImageList, FMX.ImgList, FMX.Layouts, System.Generics.Collections,fMx.MultiResBitmap,
-  FMX.Effects;
+  FMX.Effects, FMX.Memo.Types, FMX.Memo;
 
 type
 
@@ -45,23 +45,7 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     RectAnimation1: TRectAnimation;
-    grppersonad: TGroupBox;
-    grppersonid: TGroupBox;
-    grppersonsoyad: TGroupBox;
-    grppersonyas: TGroupBox;
-    grppersoncins: TGroupBox;
     RectAnimation2: TRectAnimation;
-    adi: TEdit;
-    soyadi: TEdit;
-    id: TEdit;
-    yas: TEdit;
-    cinsiyet: TEdit;
-    rctsil: TRectangle;
-    rctkaydet: TRectangle;
-    rctgüncelle: TRectangle;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
     grdPersonel: TGridPanelLayout;
     Image1: TImage;
     imgIconList: TImageList;
@@ -71,19 +55,40 @@ type
     sheDialog: TShadowEffect;
     AnimDetailWidth: TFloatAnimation;
     AnimDetailHeight: TFloatAnimation;
-    rctDialogContext: TRectangle;
+    rctDialogContent: TRectangle;
     lytDialogButtons: TLayout;
     lytDialogCopy: TLayout;
     lblDialogCopy: TLabel;
     lytDialogClose: TLayout;
     lblDialogClose: TLabel;
-    Rectangle1: TRectangle;
-    GroupBox1: TGroupBox;
-    GroupBox2: TGroupBox;
-    Edit1: TEdit;
-    procedure rctkaydetClick(Sender: TObject);
-    procedure rctsilClick(Sender: TObject);
-    procedure rctgüncelleClick(Sender: TObject);
+    Label1: TLabel;
+    rctPagination: TRectangle;
+    btnLast: TLayout;
+    imgLast: TImage;
+    btnNext: TLayout;
+    imgNext: TImage;
+    btnPrevious: TLayout;
+    imgPrevious: TImage;
+    btnFirst: TLayout;
+    imgFirst: TImage;
+    lytPage: TLayout;
+    lblPage: TLabel;
+    grpAge: TGroupBox;
+    edtAge: TEdit;
+    grpName: TGroupBox;
+    edtName: TEdit;
+    grpSurname: TGroupBox;
+    edtSurname: TEdit;
+    lytTopBox: TLayout;
+    lytBack: TLayout;
+    lytAdding: TLayout;
+    imgBack: TImage;
+    rctSearch: TRectangle;
+    imgNewCompany: TImage;
+    Layout4: TLayout;
+    imgSearch: TImage;
+    edtSearch: TEdit;
+    Label2: TLabel;
     function AddPersonelToList(APersonelID,APersonelYas:integer;APersonelAdi,APersonelSoyadi,APersonelCinsiyet:string): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure LoadData;
@@ -91,10 +96,13 @@ type
     procedure PersonelUpdate(Sender: TObject);
     procedure ShowDetailModal;
     procedure HideDetailModal(Sender: TObject);
-    procedure SaveDetailModal(Sender: TObject);
+//    procedure SaveDetailModal(Sender: TObject);
     procedure lytDialogCopyClick(Sender: TObject);
     procedure ClearGrid(AGrid : TGridPanelLayout);
-
+    procedure Rectangle1Click(Sender: TObject);
+    procedure FillPersonelInformation(APersonel :TPersonel);
+    procedure lytAddingClick(Sender: TObject);
+    procedure rctDetailScrimClick(Sender: TObject);
 
 
   private
@@ -106,32 +114,21 @@ type
 
 var
   Form2: TForm2;
+const
+  btnCaptionUpdate = 'Güncelle';
+  btnCaptionInsert = 'Ekle';
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm2.rctsilClick(Sender: TObject);
-begin
-with adoquery1 do
-  begin
-     Sql.Text := 'delete from personel where personel_id= :id';
-     parameters.ParamByName('id').Value := id.Text;
-     execsql;
-     close;
-     sql.Text :='select * from personel';
-     ShowMessage('Silme iþlemi baþarýlý!');
-     open;
-  end;
-end;
-
-procedure TForm2.SaveDetailModal(Sender: TObject); //Modal butona týklandýðýnda bildirim penceresidir.
-begin
-  AnimDetailHeight.Inverse := True;
-  AnimDetailHeight.StopValue := rctDetail.Height;
-  AnimDetailHeight.Start;
-  lytDetail.Visible := False;
-end;
+//procedure TForm2.SaveDetailModal(Sender: TObject); //Modal butona týklandýðýnda bildirim penceresidir.
+//begin
+//  AnimDetailHeight.Inverse := True;
+//  AnimDetailHeight.StopValue := rctDetail.Height;
+//  AnimDetailHeight.Start;
+//  lytDetail.Visible := False;
+//end;
 
 procedure TForm2.ShowDetailModal;
 begin
@@ -141,30 +138,13 @@ begin
   AnimDetailHeight.Start;
 end;
 
-procedure TForm2.rctkaydetClick(Sender: TObject);
-begin
-with AdoQuery1 do
-  begin
-    Sql.Text:= 'insert into personel (personel_id,personel_adi,personel_soyadi,personel_yas,personel_cinsiyet) values (:id,:adi,:soyadi,:yas,:cinsiyet)';
-    parameters.ParamByName('id').Value:= id.Text;
-    parameters.ParamByName('adi').Value := adi.text;
-    parameters.ParamByName('soyadi').Value := soyadi.Text;
-    parameters.ParamByName('yas').Value := yas.Text;
-    parameters.ParamByName('cinsiyet').Value:= cinsiyet.Text;
-    execsql;
-    close;
-    sql.Text := 'select * from personel';
-    ShowMessage('Kayýt iþlemi baþarýlý!');
-    open;
-  end;
-end;
-
 function TForm2.AddPersonelToList(APersonelID, APersonelYas: integer;
   APersonelAdi, APersonelSoyadi, APersonelCinsiyet: string): Boolean; //A harfi ile baþlayanlar
                                                                       //Fonksiyonun propertyleri.
 var                                                                   //Class içindeki fieldlerden
   LPersonel : TPersonel;                                              //olmalý.
 begin
+
   LPersonel := TPersonel.Create; //TPersonelin özellikleri LPersonele geçti.
   LPersonel.Personel_id := APersonelID; //LPersonelin.Field'ini APersonelID'ye attý.
   LPersonel.Personel_adi := APersonelAdi;
@@ -194,13 +174,14 @@ var
   lblAlan: TLabel;
   imgButton: TImage;
   grdAlanlar: TGridPanelLayout;
-  lytButton: TLayout;
+  lytUpdate, lytDelete: TLayout;
   rowcount: integer; //SATIR SAYISI
   LColumn: TGridPanelLayout.TColumnItem; //SÜTUN
   i: Integer;
   LRow: TGridPanelLayout.TRowItem; //SATIR
   item: TCustomBitmapItem;
   size: TSize;
+  rctbutton2 : TRectangle;
 
 begin
   grdPersonel.RowCollection.Clear; //gridpanel satýrlarýný siler.
@@ -208,12 +189,15 @@ begin
   rowcount := APersonels.Count+1; //satýr sayýsý bilinmediðinden deðiþken oluþturduk.
   grdPersonel.ColumnCollection.Add;
   grdPersonel.ColumnCollection.Add;
+  grdPersonel.ColumnCollection.Add;
 
   grdPersonel.ColumnCollection.BeginUpdate;
   grdPersonel.ColumnCollection.Items[0].SizeStyle := TGridPanelLayout.TSizeStyle.Percent;
   grdPersonel.ColumnCollection.Items[1].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
+  grdPersonel.ColumnCollection.Items[2].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
   grdPersonel.ColumnCollection.Items[0].Value := 100;
   grdPersonel.ColumnCollection.Items[1].Value := 50;
+  grdPersonel.ColumnCollection.Items[2].Value := 50;
   grdPersonel.ColumnCollection.EndUpdate;
 
   grdPersonel.RowCollection.BeginUpdate; //her satýrda güncelleme yapar.
@@ -247,28 +231,51 @@ begin
     rctbutton.YRadius := 0;
     rctbutton.Stroke.Thickness := 0;
 
-    lytButton := TLayout.Create(Self);
-    lytButton.Parent := rctbutton;
-    lytButton.Align := TAlignLayout.Client;
-    lytButton.Margins.Rect := TRectF.Create(2,4,2,4);
-    lytButton.HitTest := True;
-    lytButton.OnClick := PersonelUpdate;
+    lytUpdate := TLayout.Create(Self);
+    lytUpdate.Parent := rctbutton;
+    lytUpdate.Align := TAlignLayout.Client;
+    lytUpdate.Margins.Rect := TRectF.Create(2,4,2,4);
+    lytUpdate.HitTest := True;
+    lytUpdate.OnClick := PersonelUpdate;
+
+    rctbutton := TRectangle.Create(self);
+    rctbutton.Align := TAlignLayout.Client;
+    rctbutton.Parent := grdPersonel;
+    rctbutton.Width := 100;
+    rctbutton.XRadius := 0;
+    rctbutton.YRadius := 0;
+    rctbutton.Stroke.Thickness := 0;
+
+    lytDelete := TLayout.Create(Self);
+    lytDelete.Parent := rctbutton;
+    lytDelete.Align := TAlignLayout.Client;
+    lytDelete.Margins.Rect := TRectF.Create(2,4,2,4);
+    lytDelete.HitTest := True;
+    lytDelete.OnClick := PersonelUpdate;
 
     if i=0 then
     begin
       lblAlan.Text := 'Personel Adý';
       grdPersonel.ControlCollection[0].ColumnSpan := 2;
-      lytButton.HitTest := False;
+      lytUpdate.HitTest := False;
     end
     else
     begin
-      lytButton.Tag := APersonels.Items[i-1].Personel_id;
+      lytUpdate.Tag := APersonels.Items[i-1].Personel_id;
       lblAlan.Text := APersonels.Items[i-1].Personel_adi;
-      lytButton.Hint :=  APersonels.Items[i-1].Personel_adi;
-      lytButton.Tag := APersonels.Items[i-1].Personel_id;
+      lytUpdate.Hint :=  APersonels.Items[i-1].Personel_adi;
+      lytUpdate.Tag := APersonels.Items[i-1].Personel_id;
 
       imgButton := TImage.Create(self);
-      imgButton.Parent := lytbutton;
+      imgButton.Parent := lytUpdate;
+      imgButton.Align := TAlignLayout.Client;
+      imgButton.Margins.Rect := TRectF.Create(12, 12, 12, 12);
+      imgIconList.BitmapItemByName('updateBlack', item, size);
+      imgButton.Bitmap := item.MultiResBitmap.Bitmaps[1.0];
+      imgbutton.HitTest := False;
+
+      imgButton := TImage.Create(self);
+      imgButton.Parent := lytDelete;
       imgButton.Align := TAlignLayout.Client;
       imgButton.Margins.Rect := TRectF.Create(12, 12, 12, 12);
       imgIconList.BitmapItemByName('updateBlack', item, size);
@@ -317,99 +324,175 @@ begin
  end;
 end;
 
+procedure TForm2.lytAddingClick(Sender: TObject);
+begin
+  ShowDetailModal();
+  FillPersonelInformation(nil);
+end;
+
 procedure TForm2.lytDialogCopyClick(Sender: TObject);
 var
-  LDialogLayout : TLayout;
-  LDialogContent : TRectAngle;
-  LSenderLayout : TLayout;
-  LGridPanel : TGridPanelLayout;
-  LGroup : TGroupBox;
-  i : integer;
-  j : integer;
-  k : integer;
-  d : integer;
-  LPersonelAdi,LPersonelSoyadi : string;
-  LPersonelYasi : integer;
-  LEdit : TEdit;
+  LSenderLayout: TLayout;
 begin
-  // Child'tan - Parent'a
-  //týkladýðýmýz component TLayout deðil ise çýkýþ yap.
+//  // Child'tan - Parent'a
+//  //týkladýðýmýz component TLayout deðil ise çýkýþ yap.
   if not (sender.ClassType = TLayout) then
     exit;
   //Senderimizin TLayout tipinde olduðunu gördük.
   LSenderLayout := Sender as TLayout;
+//
+//  //SenderLayoutumuzun parentinin classtype'i Tlayout deðil ise çýkýþ yap.
+//  if not (LSenderLayout.Parent.ClassType = TLayout) then
+//    exit;
+//  //Senderimizin parentinin tlayout olduðunu öðrendik.
+//  LDialogLayout := LSenderLayout.Parent as TLayout;
+//
+// //**
+//  //LDialogLayoutumuzun parentinin classtypei rectangle deðil ise çýkýþ yap.
+//  if not (LDialogLayout.Parent.ClassType = TRectangle) then
+//    exit;
+//  //LDialoglayotumuzun parentinin trectangle olduðunu öðrendik ve Dialogcontente atadýk.
+//  LDialogContent := LDialogLayout.Parent as TRectAngle;
+//
+//
+//  //Genel parentimiz dialogcontent olduðu için onun childlerini gezdik (count-1)
+//  for i := 0 to LDialogContent.Children.Count -1 do
+//  begin
+//  //Dialogcontentimizin childlerinin içinde gridpanellayout olaný arýyoruz. Deðilse çýk.
+//    if not (LDialogContent.Children[i].ClassType = TGridPanelLayout) then
+//      continue;
+//
+//     //Gridpaneli bulduk contentin childlerini gez ve gridpanellayout ??????
+//     LGridPanel := LDialogContent.Children[i] as TGridPanelLayout;
+//
+//    for j := 0 to LGridPanel.ControlCollection.Count -1 do
+//    begin
+//      if not (LGridPanel.Controls[j].ClassType = TGroupBox) then
+//        continue;
+//
+//      LGroup := LGridPanel.Controls[j] as TGroupBox;
+//
+//      for k := 0 to LGroup.Children.Count -1 do
+//      begin
+//        if not (LGroup.Children[k].ClassType = TEdit) then
+//          continue;
+//
+//          LEdit := LGroup.Children[k] as TEdit;
 
-  //SenderLayoutumuzun parentinin classtype'i Tlayout deðil ise çýkýþ yap.
-  if not (LSenderLayout.Parent.ClassType = TLayout) then
-    exit;
-  //Senderimizin parentinin tlayout olduðunu öðrendik.
-  LDialogLayout := LSenderLayout.Parent as TLayout;
+//        if LGroup.Text = 'Personel Adý' then
+//        begin
+//         LPersonelAdi := LEdit.Text;
+//        end;
+//
+//        if LGroup.Text = 'Personel Soyad' then
+//        begin
+//         LPersonelSoyadi := LEdit.Text;
+//        end;
+//
+//        if LGroup.Text = 'Personel Yaþ' then
+//        begin
+//         LPersonelYasi := LEdit.Text.ToInteger;
+//        end;
 
- //**
-  //LDialogLayoutumuzun parentinin classtypei rectangle deðil ise çýkýþ yap.
-  if not (LDialogLayout.Parent.ClassType = TRectangle) then
-    exit;
-  //LDialoglayotumuzun parentinin trectangle olduðunu öðrendik ve Dialogcontente atadýk.
-  LDialogContent := LDialogLayout.Parent as TRectAngle;
+//      end;
+//
+//    end;
 
+//  end;
 
-  //Genel parentimiz dialogcontent olduðu için onun childlerini gezdik (count-1)
-  for i := 0 to LDialogContent.Children.Count -1 do
-  begin
-  //Dialogcontentimizin childlerinin içinde gridpanellayout olaný arýyoruz. Deðilse çýk.
-    if not (LDialogContent.Children[i].ClassType = TGridPanelLayout) then
-      continue;
-
-     //Gridpaneli bulduk contentin childlerini gez ve gridpanellayout ??????
-     LGridPanel := LDialogContent.Children[i] as TGridPanelLayout;
-
-    for j := 0 to LGridPanel.ControlCollection.Count -1 do
+//  ShowMessage(LSenderLayout.Tag.ToString);
+    if lblDialogCopy.Text = btnCaptionUpdate then
     begin
-      if not (LGridPanel.Controls[j].ClassType = TGroupBox) then
-        continue;
-
-      LGroup := LGridPanel.Controls[j] as TGroupBox;
-
-      for k := 0 to LGroup.Children.Count -1 do
-      begin
-        if not (LGroup.Children[k].ClassType = TEdit) then
-          continue;
-
-          LEdit := LGroup.Children[k] as TEdit;
-
-        if LGroup.Text = 'Personel Adý' then
-        begin
-         LPersonelAdi := LEdit.Text;
-        end;
-
-        if LGroup.Text = 'Personel Soyad' then
-        begin
-         LPersonelSoyadi := LEdit.Text;
-        end;
-
-        if LGroup.Text = 'Personel Yaþ' then
-        begin
-         LPersonelYasi := LEdit.Text.ToInteger;
-        end;
-
-      end;
-
+      Adoquery1.SQL.Text := 'update personel set personel_adi= :pPersonelAd, personel_soyadi= :pPersonelSoyad, personel_yas= :pPersonelYas where personel_id= :pPersonelID';
+      AdoQuery1.Parameters.ParamByName('pPersonelID').Value := LSenderLayout.Tag.ToString;
+      Adoquery1.Parameters.ParamByName('pPersonelAd').Value := edtName.Text;
+      AdoQuery1.Parameters.ParamByName('pPersonelSoyad').Value := edtSurname.Text;
+      AdoQuery1.Parameters.ParamByName('pPersonelYas').Value := edtAge.Text;
+      Adoquery1.ExecSQL;
+    end
+    else if lblDialogCopy.Text = btnCaptionInsert then
+    begin
+      AdoQuery1.SQL.Text := 'insert into personel (personel_adi, personel_soyadi, personel_yas) values (:personeladi, :personelsoyadi, :personelyas)';
+      AdoQuery1.Parameters.ParamByName('personeladi').Value := edtName.Text;
+      AdoQuery1.Parameters.ParamByName('personelsoyadi').Value := edtSurname.Text;
+      AdoQuery1.Parameters.ParamByName('personelyas').Value := edtAge.Text;
+      AdoQuery1.ExecSQL;
     end;
 
-  end;
-//  ShowMessage(LSenderLayout.Tag.ToString);
-  Adoquery1.SQL.Text := 'update personel set personel_adi= :pPersonelAd where personel_id= :pPersonelID';
-  AdoQuery1.Parameters.ParamByName('pPersonelID').Value := LSenderLayout.Tag.ToString;
-  Adoquery1.Parameters.ParamByName('pPersonelAd').Value := LPersonelAdi;
-  Adoquery1.ExecSQL;
-
-  if LGridPanel = nil then
-    exit;
-    
   ClearGrid(grdPersonel);
-  HideDetailModal(Sender);   
+  HideDetailModal(Sender);
   LoadData();
   DesignPersonelPage(PersonelList,'Personel Adý');
+end;
+
+procedure TForm2.FillPersonelInformation(APersonel :TPersonel);
+
+begin
+ShowDetailModal();
+//  grdDetail := TGridPanelLayout.Create(self);
+//  grdDetail.Parent := rctDialogContext;
+//  grdDetail.Align := TAlignLayout.Client;
+//  grdDetail.ColumnCollection.Clear;
+//  grdDetail.RowCollection.Clear;
+//  grdDetail.ColumnCollection.Add;
+//  grdDetail.RowCollection.Add;
+//  grdDetail.RowCollection.Add;
+//  grdDetail.RowCollection.Add;
+//  grdDetail.RowCollection.BeginUpdate;
+//  grdDetail.RowCollection.Items[0].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
+//  grdDetail.RowCollection.Items[0].Value := 50;
+//  grdDetail.RowCollection.Items[1].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
+//  grdDetail.RowCollection.Items[1].Value := 50;
+//  grdDetail.RowCollection.Items[2].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
+//  grdDetail.RowCollection.Items[2].Value := 50;
+//  grdDetail.RowCollection.EndUpdate;
+//
+//  grpName := TGroupbox.Create(self);
+//  grpName.Parent := grdDetail;
+//  grpName.Align := TAlignLayout.Client;
+//  grpName.Text := 'Personel Adý';
+//  grpName.Padding.Top := 20;
+//
+//  edtName := TEdit.Create(self);
+//  edtName.Parent := grpName;
+//  edtName.Align := TAlignLayout.Client;
+//
+//  grpSurname := TGroupbox.Create(self);
+//  grpSurname.Parent := grdDetail;
+//  grpSurname.Align := TAlignLayout.Client;
+//  grpSurname.Padding.Top := 20;
+//  grpSurname.Text := 'Personel Soyad';
+//
+//  edtSurname := TEdit.Create(self);
+//  edtSurname.Parent := grpSurname;
+//  edtSurname.Align := TAlignLayout.Client;
+//
+//  grpAge := TGroupbox.Create(self);
+//  grpAge.Parent := grdDetail;
+//  grpAge.Align := TAlignLayout.Client;
+//  grpAge.Padding.Top := 20;
+//  grpAge.Text := 'Personel Yaþ';
+//
+//  edtAge := TEdit.Create(self);
+//  edtAge.Parent := grpAge;
+//  edtAge.Align := TAlignLayout.Client;
+
+
+  if APersonel <> nil then
+  begin
+    edtName.Text := APersonel.Personel_adi;
+    edtSurname.Text := APersonel.FPersonel_soyadi;
+    edtAge.Text := APersonel.Personel_yas.ToString;
+    lblDialogCopy.Text := btnCaptionUpdate;
+  end
+  else
+  begin
+    edtName.Text := '';
+    edtSurname.Text := '';
+    edtAge.Text := '';
+    lblDialogCopy.Text := btnCaptionInsert;
+  end;
+
 end;
 
 procedure TForm2.PersonelUpdate(Sender: TObject);
@@ -443,83 +526,20 @@ begin
   end;
   //grid rowlarýný artýr.
   //bilgiler gelsin.
-  ShowDetailModal();
-  grdDetail := TGridPanelLayout.Create(self);
-  grdDetail.Parent := rctDialogContext;
-  grdDetail.Align := TAlignLayout.Client;
-  grdDetail.ColumnCollection.Clear;
-  grdDetail.RowCollection.Clear;
-  grdDetail.ColumnCollection.Add;
-  grdDetail.RowCollection.Add;
-  grdDetail.RowCollection.Add;
-  grdDetail.RowCollection.Add;
-  grdDetail.RowCollection.BeginUpdate;
-  grdDetail.RowCollection.Items[0].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
-  grdDetail.RowCollection.Items[0].Value := 50;
-  grdDetail.RowCollection.Items[1].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
-  grdDetail.RowCollection.Items[1].Value := 50;
-  grdDetail.RowCollection.Items[2].SizeStyle := TGridPanelLayout.TSizeStyle.Absolute;
-  grdDetail.RowCollection.Items[2].Value := 50;
-  grdDetail.RowCollection.EndUpdate;
-
-  grpName := TGroupbox.Create(self);
-  grpName.Parent := grdDetail;
-  grpName.Align := TAlignLayout.Client;
-  grpName.Text := 'Personel Adý';
-  grpName.Padding.Top := 20;
-
-  edtInfo := TEdit.Create(self);
-  edtInfo.Parent := grpName;
-  edtInfo.Align := TAlignLayout.Client;
-  edtInfo.Text := LPersonel.Personel_adi;
-
-  grpSurname := TGroupbox.Create(self);
-  grpSurname.Parent := grdDetail;
-  grpSurname.Align := TAlignLayout.Client;
-  grpSurname.Text := 'Personel Soyad';
-  grpSurname.Padding.Top := 20;
-
-  edtInfo := TEdit.Create(self);
-  edtInfo.Parent := grpSurname;
-  edtInfo.Align := TAlignLayout.Client;
-  edtInfo.Text := LPersonel.Personel_soyadi;
-
-  grpAge := TGroupbox.Create(self);
-  grpAge.Parent := grdDetail;
-  grpAge.Align := TAlignLayout.Client;
-  grpAge.Padding.Top := 20;
-  grpAge.Text := 'Personel Yaþ';
-
-  edtInfo := TEdit.Create(self);
-  edtInfo.Parent := grpAge;
-  edtInfo.Align := TAlignLayout.Client;
-  edtInfo.Text := LPersonel.Personel_yas.ToString;
-
+  FillPersonelInformation(LPersonel);
   lytDialogCopy.Tag := LPersonelId;
 
 end;
 
-procedure TForm2.rctgüncelleClick(Sender: TObject);
+procedure TForm2.rctDetailScrimClick(Sender: TObject);
 begin
-with Adoquery1 do
-  begin
-    Sql.Text := 'update personel set personel_id= :a';
-    parameters.ParamByName('a').Value := id.Text;
-    Sql.Text := 'update personel set personel_adi= :b';
-    parameters.ParamByName('b').Value := adi.Text;
-    Sql.Text := 'update personel set personel_soyadi= :c';
-    parameters.ParamByName('c').Value := soyadi.Text;
-    Sql.Text := 'update personel set personel_yas= :d';
-    parameters.ParamByName('d').Value := yas.Text;
-    Sql.Text := 'update personel set personel_cinsiyet= :e';
-    parameters.ParamByName('e').Value := cinsiyet.Text;
 
-    execsql;
-    close;
-    sql.Text:='select * from personel';
-    showmessage('Güncelleme iþlemi baþarýlý!');
-    open;
-  end;
+end;
+
+//////////////////////////////////////////////////
+procedure TForm2.Rectangle1Click(Sender: TObject);
+begin
+
 end;
 
 { TPersonelList }

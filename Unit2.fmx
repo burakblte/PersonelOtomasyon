@@ -1,10 +1,10 @@
-﻿object Form2: TForm2
+object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 575
-  ClientWidth = 865
-  Fill.Color = xFF112F4A
+  ClientHeight = 600
+  ClientWidth = 400
+  Fill.Color = xFFE4DFE4
   Fill.Kind = Solid
   Position = ScreenCenter
   FormFactor.Width = 320
@@ -42,224 +42,16 @@
   object RectAnimation1: TRectAnimation
     Duration = 0.200000002980232200
   end
-  object grppersonad: TGroupBox
-    StyledSettings = [Size, Other]
-    Position.X = 32.000000000000000000
-    Position.Y = 96.000000000000000000
-    Size.Width = 177.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Personel Ad'#305
-    TextSettings.Font.Family = 'Montserrat'
-    TextSettings.Font.StyleExt = {00050000000000000004000000}
-    TextSettings.FontColor = claAliceblue
-    TabOrder = 9
-    object adi: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      StyleLookup = 'transparentedit'
-      TabOrder = 36
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.FontColor = claAliceblue
-      Position.X = 24.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 137.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Size, Style]
-    end
-  end
-  object grppersonid: TGroupBox
-    StyledSettings = [Other]
-    Position.X = 32.000000000000000000
-    Position.Y = 40.000000000000000000
-    Size.Width = 177.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Personel ID'
-    TextSettings.Font.Family = 'Montserrat'
-    TextSettings.Font.StyleExt = {00050000000000000004000000}
-    TextSettings.FontColor = claAliceblue
-    TabOrder = 8
-    object id: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      StyleLookup = 'transparentedit'
-      TabOrder = 36
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.FontColor = claAliceblue
-      Position.X = 24.000000000000000000
-      Position.Y = 8.000000000000000000
-      Padding.Left = 10.000000000000000000
-      Margins.Left = 10.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Size.Width = 137.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Size, Style]
-    end
-  end
-  object grppersonyas: TGroupBox
-    StyledSettings = [Size, Other]
-    Position.X = 32.000000000000000000
-    Position.Y = 208.000000000000000000
-    Size.Width = 177.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Personel Ya'#351
-    TextSettings.Font.Family = 'Montserrat'
-    TextSettings.Font.StyleExt = {00050000000000000004000000}
-    TextSettings.FontColor = claAliceblue
-    TabOrder = 15
-    object yas: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      StyleLookup = 'transparentedit'
-      TabOrder = 36
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.FontColor = claAliceblue
-      Position.X = 24.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 137.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Size, Style]
-    end
-  end
-  object grppersoncins: TGroupBox
-    StyledSettings = [Size, Other]
-    Position.X = 32.000000000000000000
-    Position.Y = 264.000000000000000000
-    Size.Width = 177.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Personel Cinsiyet'
-    TextSettings.Font.Family = 'Montserrat'
-    TextSettings.Font.StyleExt = {00050000000000000004000000}
-    TextSettings.FontColor = claAliceblue
-    TabOrder = 14
-    object cinsiyet: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      StyleLookup = 'transparentedit'
-      TabOrder = 36
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.FontColor = claAliceblue
-      Position.X = 24.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 137.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Size, Style]
-    end
-  end
   object RectAnimation2: TRectAnimation
     Duration = 0.200000002980232200
   end
-  object grppersonsoyad: TGroupBox
-    StyledSettings = [Size, Other]
-    Position.X = 32.000000000000000000
-    Position.Y = 152.000000000000000000
-    Size.Width = 177.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    Text = 'Personel Soyad'#305
-    TextSettings.Font.Family = 'Montserrat'
-    TextSettings.Font.StyleExt = {00050000000000000004000000}
-    TextSettings.FontColor = claAliceblue
-    TabOrder = 13
-    object soyadi: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      StyleLookup = 'transparentedit'
-      TabOrder = 36
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.FontColor = claAliceblue
-      Position.X = 24.000000000000000000
-      Position.Y = 8.000000000000000000
-      Size.Width = 137.000000000000000000
-      Size.Height = 33.000000000000000000
-      Size.PlatformDefault = False
-      StyledSettings = [Size, Style]
-    end
-  end
-  object rctsil: TRectangle
-    Fill.Color = xFF13B7B7
-    Position.X = 232.000000000000000000
-    Position.Y = 144.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 33.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Kind = None
-    XRadius = 10.000000000000000000
-    YRadius = 16.500000000000000000
-    OnClick = rctsilClick
-    object Label2: TLabel
-      Align = Center
-      StyledSettings = []
-      Size.Width = 30.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.Font.Size = 18.000000000000000000
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claAntiquewhite
-      Text = 'Sil'
-      TabOrder = 0
-    end
-  end
-  object rctkaydet: TRectangle
-    Fill.Color = xFF119999
-    Position.X = 232.000000000000000000
-    Position.Y = 96.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 33.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Kind = None
-    XRadius = 10.000000000000000000
-    YRadius = 16.500000000000000000
-    OnClick = rctkaydetClick
-    object Label1: TLabel
-      Align = Center
-      StyledSettings = []
-      Size.Width = 68.000000000000000000
-      Size.Height = 25.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.Font.Size = 18.000000000000000000
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claAntiquewhite
-      Text = 'Kaydet'
-      TabOrder = 0
-    end
-  end
-  object rctgüncelle: TRectangle
-    Fill.Color = xFF119999
-    Position.X = 232.000000000000000000
-    Position.Y = 192.000000000000000000
-    Size.Width = 105.000000000000000000
-    Size.Height = 33.000000000000000000
-    Size.PlatformDefault = False
-    Stroke.Kind = None
-    XRadius = 10.000000000000000000
-    YRadius = 16.500000000000000000
-    OnClick = rctgüncelleClick
-    object Label3: TLabel
-      Align = Center
-      StyledSettings = []
-      Size.Width = 86.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Family = 'Montserrat'
-      TextSettings.Font.Size = 18.000000000000000000
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claAntiquewhite
-      Text = 'G'#252'ncelle'
-      TabOrder = 0
-    end
-  end
   object grdPersonel: TGridPanelLayout
-    Position.X = 480.000000000000000000
-    Position.Y = 40.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 120.000000000000000000
     Size.Width = 377.000000000000000000
     Size.Height = 73.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 49
+    TabOrder = 44
     ColumnCollection = <
       item
         Value = 50.000000000000000000
@@ -286,19 +78,11 @@
   object lytDetail: TLayout
     Align = Client
     HitTest = True
-    Size.Width = 865.000000000000000000
-    Size.Height = 575.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 536.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 3
-    object rctDetailScrim: TRectangle
-      Align = Client
-      Fill.Color = claBlack
-      HitTest = False
-      Opacity = 0.300000011920929000
-      Size.Width = 865.000000000000000000
-      Size.Height = 575.000000000000000000
-      Size.PlatformDefault = False
-    end
     object rctDetail: TRectangle
       Align = Center
       Fill.Color = claWhite
@@ -327,7 +111,7 @@
         StartValue = 0.000000000000000000
         StopValue = 300.000000000000000000
       end
-      object rctDialogContext: TRectangle
+      object rctDialogContent: TRectangle
         Align = Client
         Fill.Color = claWhite
         HitTest = False
@@ -349,7 +133,7 @@
           Size.Width = 292.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 0
+          TabOrder = 1
           object lytDialogCopy: TLayout
             Align = Right
             HitTest = True
@@ -410,46 +194,464 @@
             end
           end
         end
+        object grpAge: TGroupBox
+          Anchors = []
+          Position.X = 33.000000000000000000
+          Position.Y = 174.000000000000000000
+          Size.Width = 144.000000000000000000
+          Size.Height = 42.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Personel Ya'#351
+          TabOrder = 2
+          object edtAge: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            StyleLookup = 'transparentedit'
+            TabOrder = 38
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Size.Width = 134.000000000000000000
+            Size.Height = 27.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object grpName: TGroupBox
+          Anchors = []
+          Position.X = 33.000000000000000000
+          Position.Y = 78.000000000000000000
+          Size.Width = 144.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Personel Ad'#305
+          TabOrder = 3
+          object edtName: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            StyleLookup = 'transparentedit'
+            TabOrder = 38
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Size.Width = 134.000000000000000000
+            Size.Height = 26.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object grpSurname: TGroupBox
+          Anchors = []
+          Position.X = 33.000000000000000000
+          Position.Y = 130.000000000000000000
+          Size.Width = 144.000000000000000000
+          Size.Height = 38.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Personel Soyad'#305
+          TabOrder = 0
+          object edtSurname: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            StyleLookup = 'transparentedit'
+            TabOrder = 38
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 15.000000000000000000
+            Size.Width = 134.000000000000000000
+            Size.Height = 23.000000000000000000
+            Size.PlatformDefault = False
+          end
+        end
+        object Label2: TLabel
+          StyledSettings = [Style, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 20.000000000000000000
+          Text = 'Personel Bilgileri'
+          TabOrder = 4
+        end
       end
     end
-  end
-  object Rectangle1: TRectangle
-    Position.X = 424.000000000000000000
-    Position.Y = 304.000000000000000000
-    Size.Width = 281.000000000000000000
-    Size.Height = 241.000000000000000000
-    Size.PlatformDefault = False
-    Visible = False
-    object GroupBox1: TGroupBox
-      Align = Top
-      Padding.Left = 5.000000000000000000
-      Padding.Top = 20.000000000000000000
-      Padding.Right = 5.000000000000000000
-      Padding.Bottom = 5.000000000000000000
-      Size.Width = 281.000000000000000000
-      Size.Height = 65.000000000000000000
+    object rctDetailScrim: TRectangle
+      Align = Client
+      Fill.Color = claBlack
+      HitTest = False
+      Opacity = 0.300000011920929000
+      Size.Width = 400.000000000000000000
+      Size.Height = 536.000000000000000000
       Size.PlatformDefault = False
-      Text = 'zsdzsdzs'
-      TabOrder = 0
-      object Edit1: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Visible = False
+      OnClick = rctDetailScrimClick
+    end
+  end
+  object Label1: TLabel
+    StyledSettings = []
+    Position.X = 8.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Family = 'Roboto'
+    TextSettings.Font.Size = 26.000000000000000000
+    TextSettings.Font.StyleExt = {00050000000000000004000000}
+    Text = 'Personeller'
+    TabOrder = 51
+  end
+  object rctPagination: TRectangle
+    Align = Bottom
+    Fill.Color = xFFE4DFE4
+    Position.Y = 536.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Stroke.Thickness = 0.000000000000000000
+    object btnLast: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 344.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object imgLast: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0109494441546843EDD85D0EC1501005E0B2036125621136C38B17E26F8B6209
+              3C4A7847C299A8A43971457B3BB7C8F992134DD3993B937828998888888894D6
+              43BA8FCB6843649FC7AEDD8D902B7241667623D20EB9E5B16B7707E479A0658D
+              C428F6B2B8DB207CE80AA98A7BB9EB2347840F5E2255709F2406485D4B708F64
+              424B2C9032B83EA93A96E0DAE4424BCC914F705D236296E09AC684969820EFF0
+              F38D7AB5C419E92021C5672DA5B4F34F4FAD3C5F2FF4159A22EFF0F38D080DFF
+              C97B12D7241733BCE1BAA46287375C9B4C1DC31BAE4FA2AEE10DF770177A9DAE
+              32BCE13EEEB6081F5A7578C3BDDC9D90E28131C39B622F8BBB31F2D33FEACD4F
+              FFAD22222222F21FB2EC0EE310C4F268BC56C40000000049454E44AE426082}
+            FileName = 
+              'C:\Projects - Delphi\YalinADM\Icons\2x\round_last_page_black_24d' +
+              'p.png'
+          end>
         Align = Client
-        StyleLookup = 'transparentedit'
-        TabOrder = 38
-        Text = 'zsddzsdzsds'
-        Size.Width = 271.000000000000000000
-        Size.Height = 40.000000000000000000
+        HitTest = False
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
       end
     end
-    object GroupBox2: TGroupBox
-      Align = Top
-      Position.Y = 65.000000000000000000
-      Size.Width = 281.000000000000000000
-      Size.Height = 100.000000000000000000
+    object btnNext: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Top = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 296.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
-      Text = 'sddzs'
+      TabOrder = 2
+      object imgNext: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00A9494441546843EDD8C109C2401445D1C10A14771621D891F62182924D5AB3
+              0E9756208ABE4F0C04C9AC54665EB8072E0959FD0F596492000000F03373B5EC
+              6EFD6CD54DDDD5311EB8B9A8E7A0565939ABE102764BACD555592FB1512C5103
+              96A8C5A49738291B634B3CD44A7D65F6BE96D02F52BDDC2B7450D5CB0DDFA8EA
+              317C290C5F4AEE73DA62F83076A0B1193E7C1E29AD860F3BD51FEAF7F1C051FC
+              565974B7000000F8AF945E9A116F2EDD62BFD20000000049454E44AE426082}
+            FileName = 
+              'C:\Projects - Delphi\YalinADM\Icons\2x\round_navigate_next_black' +
+              '_24dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object btnPrevious: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Top = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 248.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
       TabOrder = 1
+      object imgPrevious: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00B9494441546843EDD83D0E01611485E141213621128942A1661B0A6B127FBB
+              B013854D4894128BE0BD9846E6AB467C7326E749DEA09173338D28CCCCCCCCEC
+              6F7A347CBFD533A50B3DE8447D9211E36F14E3CB9624A16A7C34A7C64B8DDF51
+              E3A5C61FA8F13C3E178FCF654CB2E3C391B28CEF7E5EEBFAD5F76433A13B7D3F
+              853DC998516B8F90F8E9506AF5115B92913A6243325247AC4946EA8805C9A83A
+              624552E2882BC5F8330D484EFC1331A2CEEB9399999999D550144F07606D2208
+              7023DC0000000049454E44AE426082}
+            FileName = 
+              'C:\Projects - Delphi\YalinADM\Icons\2x\round_navigate_before_bla' +
+              'ck_24dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object btnFirst: TLayout
+      Align = Right
+      HitTest = True
+      Margins.Top = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 200.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object imgFirst: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0125494441546843EDD83D6EC2401404602B2720847BA0040E91ABD0D0A4019A
+              DC30458E9074889F1E2225F3645BB24676BC6BFB795DCC278D5859869D07856D
+              321111111189F28A7C17B1F5109E9045BEF4F785FC16B1755F7BE48EFC205B3B
+              E0AD2C5FA68F77A4FA5957C45D75434B575CDEF289B8E34DBBA82B7F415E1077
+              BC71ACA6F26B6414BC798CE4E50D17083589F2864B84984C79C345DA4CAABCE1
+              32FFD9217C7ED2F2860B3599237685AD9E3B78F987E2D543DB80C954BFD1B682
+              6F089F6FBFC20A49860BB53920FC9EA4437099104D438C72EBC0B848A8BA21CE
+              C8E8437089189318820BC46A1AE21919056FDE45DD10276489B8E38DBBAA1BE2
+              0371C79BF6C1431C1177433FD4DBC5EE86D86DC7C60E78F3F85B65863CE64B11
+              1111110993657FE082C6B301B98FB60000000049454E44AE426082}
+            FileName = 
+              'C:\Projects - Delphi\YalinADM\Icons\2x\round_first_page_black_24' +
+              'dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object lytPage: TLayout
+      Align = Client
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object lblPage: TLabel
+        Align = Client
+        StyledSettings = []
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 172.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00050000000000000004000000}
+        TextSettings.FontColor = xFF1C1B1F
+        TextSettings.HorzAlign = Trailing
+        Text = '0-0 of 0'
+        TabOrder = 0
+      end
+    end
+  end
+  object lytTopBox: TLayout
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 369.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 58
+    object lytBack: TLayout
+      TabOrder = 0
+      object imgBack: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00AD494441546843EDD3CD09C2401404E0454FF6E3CFD5C202113B13EC231DA8
+              1DE83C7D0B39AC5E92F87696F960D824A719922411119105F5C8E973C9C7CA3F
+              3D677BC0645C3EA7432894CA3F9003523D958FA2F251543E8ACA4751F928A5F2
+              FFCA6491E52D3FADFC6C1EF5279451FFC49946D4E2DB883D42A334E28E343162
+              87D0D0885A343D628BD0288DB8218B8C58FB39A78B9F473FCD061990EBFB8EC4
+              F84DD835252B4E5B5E44446A97D20B13DBE798804A13DF0000000049454E44AE
+              426082}
+            FileName = 
+              'C:\Projects - Delphi\YalinADM\Icons\2x\outline_arrow_back_black_' +
+              '24dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 34.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object lytAdding: TLayout
+      HitTest = True
+      Position.X = 319.000000000000000000
+      TabOrder = 1
+      OnClick = lytAddingClick
+      object imgNewCompany: TImage
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              008C494441546843EDD6C10980301044D16875F65F8216A25948204840575886
+              95FF603007410772980200007E6AAB395AEC9CCE5E73B6D839C4D29E11ECC747
+              21DF5ADB332D0AA851408D026A1450F314E8DBA6CF83A7DCCDDE99256C3B8DDB
+              263AAFB753FA2BE4E1BD425FE3BA42AC51350AA851408D026A14508B2C6093A0
+              1BCF69F4EDE4DA360000208F522E6D01588B62B5E16C0000000049454E44AE42
+              6082}
+            FileName = 'C:\Projects - Delphi\YalinADM\Icons\2x\round_add_black_24dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 34.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object rctSearch: TRectangle
+      Position.X = 64.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 233.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      XRadius = 20.000000000000000000
+      YRadius = 20.000000000000000000
+      object Layout4: TLayout
+        Align = Right
+        Position.X = 183.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object imgSearch: TImage
+          MultiResBitmap.Height = 48
+          MultiResBitmap.Width = 48
+          MultiResBitmap = <
+            item
+              Width = 48
+              Height = 48
+              PNG = {
+                89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                01DE494441546843ED98BB4AC440148657B154D0D24B258885A59DA060E10B58
+                F802BE838ABADA586AE55B58588BF7C7F0025A088AAD6261E1E5FFE5040EC324
+                2699CC6413E6838FB39B9D3973C924996C271289446AA54F6219A6E0325C8493
+                70149217F800AFE031BC873DC52CBC803F396559D6A99D017808BFA1ADA359B2
+                0EEB32472D8CC04B68EB5C119983B982C2594BEBFC195C85BC1E06457EE631FE
+                66ABC35C41CF044FBDD9895BB800FF836558D6ACCF9C41E0C567AEF96B380CF3
+                C2B2ACA3733067900BFB1CEA86399B453A9FC03AE699606EAF4C43DD20CDB36C
+                D2605D331FDBF0C61AD48D9D42579843E7641B4EF44BB4B12431E148A20B660E
+                B38D4AB9817AB6AA38DDE6B2641BDE7883BAB121E80A73E89C6CC389AC251402
+                97CDE41F59037896983026D10533C7ABC4D2640DE04962C2BC4417CC1C8F124B
+                933500EE65342B125D3073787D98857890CD40AFF8DC4A9C40EFF8DACC7DC139
+                18041FDBE97D188CAA5F683EE1040C4A55AF94ECBCFEBE0B83E1FA527F00C7D5
+                B1C41D1894A27FABF06EA32F585B99E083205CEBEB901DBC83EFF003F2E9CA63
+                1BD0769FE7B2B10DA20B1B0367BCB583D8868D8133DEDA416CC1C6C0196FED20
+                36612A75BF526AF660A3D67E1A5C36B966BF9761C71BDBF9482412690C9DCE2F
+                042F2C59CBE11DDF0000000049454E44AE426082}
+              FileName = 
+                'C:\Projects - Delphi\YalinADM\Icons\2x\outline_search_black_24dp' +
+                '.png'
+            end>
+          Align = Client
+          HitTest = False
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 8.000000000000000000
+          Margins.Right = 8.000000000000000000
+          Margins.Bottom = 8.000000000000000000
+          Size.Width = 34.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object edtSearch: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        StyleLookup = 'transparentedit'
+        TabOrder = 2
+        Text = 'Search...'
+        Position.X = 16.000000000000000000
+        Size.Width = 169.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+      end
     end
   end
   object ADOConnection1: TADOConnection
@@ -530,7 +732,7 @@
         Name = 'updateBlack'
       end>
     Destination = <>
-    Left = 288
-    Top = 240
+    Left = 376
+    Top = 328
   end
 end

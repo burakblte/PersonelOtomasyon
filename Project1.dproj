@@ -256,7 +256,6 @@
         </DelphiCompile>
         <DCCReference Include="Unit1.pas">
             <Form>Form1</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="ElAES.pas"/>
         <DCCReference Include="LicenceEntities.pas"/>
@@ -290,7 +289,6 @@
         <DCCReference Include="JWTLib\JOSE\JOSE.Producer.pas"/>
         <DCCReference Include="Unit2.pas">
             <Form>Form2</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
