@@ -74,7 +74,6 @@ type
     lytPage: TLayout;
     lblPage: TLabel;
     grpAge: TGroupBox;
-    edtAge: TEdit;
     grpName: TGroupBox;
     edtName: TEdit;
     grpSurname: TGroupBox;
@@ -89,6 +88,9 @@ type
     imgSearch: TImage;
     edtSearch: TEdit;
     Label2: TLabel;
+    edtAge: TEdit;
+    Layout1: TLayout;
+    Layout2: TLayout;
     function AddPersonelToList(APersonelID,APersonelYas:integer;APersonelAdi,APersonelSoyadi,APersonelCinsiyet:string): Boolean;
     procedure FormCreate(Sender: TObject);
     procedure LoadData;
@@ -103,6 +105,8 @@ type
     procedure FillPersonelInformation(APersonel :TPersonel);
     procedure lytAddingClick(Sender: TObject);
     procedure rctDetailScrimClick(Sender: TObject);
+    procedure DeletePersonel(Sender: TObject);
+
 
 
   private
@@ -166,6 +170,26 @@ begin
     control.Destroy;
   end;
 
+end;
+
+procedure TForm2.DeletePersonel(Sender: TObject);
+var
+  LPersonelId: Integer;
+  LPersonel: TPersonel;
+  Response: Integer;
+begin
+  LPersonelId := TLayout(Sender).Tag;
+  LPersonel := PersonelList.GetById(LPersonelId);
+
+  ShowMessage('Silmek istediðinizden emin misiniz?');
+
+  AdoQuery1.SQL.Text := 'delete from personel where personel_id= :pPersonelId';
+  AdoQuery1.Parameters.ParamByName('pPersonelId').Value := LPersonel.Personel_id;
+  AdoQuery1.ExecSQL;
+
+  ClearGrid(grdPersonel);
+  LoadData();
+  DesignPersonelPage(PersonelList,'Personel Adý');
 end;
 
 procedure TForm2.DesignPersonelPage(APersonels:TList<TPersonel>;AColumnName:string);
@@ -251,7 +275,7 @@ begin
     lytDelete.Align := TAlignLayout.Client;
     lytDelete.Margins.Rect := TRectF.Create(2,4,2,4);
     lytDelete.HitTest := True;
-    lytDelete.OnClick := PersonelUpdate;
+    lytDelete.OnClick := DeletePersonel;
 
     if i=0 then
     begin
@@ -265,6 +289,7 @@ begin
       lblAlan.Text := APersonels.Items[i-1].Personel_adi;
       lytUpdate.Hint :=  APersonels.Items[i-1].Personel_adi;
       lytUpdate.Tag := APersonels.Items[i-1].Personel_id;
+      lytDelete.Tag := APersonels.Items[i-1].Personel_id;
 
       imgButton := TImage.Create(self);
       imgButton.Parent := lytUpdate;
@@ -278,12 +303,15 @@ begin
       imgButton.Parent := lytDelete;
       imgButton.Align := TAlignLayout.Client;
       imgButton.Margins.Rect := TRectF.Create(12, 12, 12, 12);
-      imgIconList.BitmapItemByName('updateBlack', item, size);
+      imgIconList.BitmapItemByName('deleteBlack', item, size);
       imgButton.Bitmap := item.MultiResBitmap.Bitmaps[1.0];
       imgbutton.HitTest := False;
+
+
     end;
 
   end;
+
 
   grdPersonel.RowCollection.EndUpdate; //her satýrda güncellemeyi sonlandýrýr.
 
@@ -524,6 +552,7 @@ begin
     ShowMessage('Personel bulunamadý.');
     exit;
   end;
+
   //grid rowlarýný artýr.
   //bilgiler gelsin.
   FillPersonelInformation(LPersonel);
