@@ -15,7 +15,7 @@ Coordinates=60,10,84,36
 Visible=False
 
 []
-Coordinates=504,133,80,36
+Coordinates=320,334,55,58
 Visible=True
 
 [DataSource1]
@@ -110,9 +110,6 @@ Coordinates=255,78,61,58
 
 [rctDetailScrim]
 Coordinates=379,334,95,36
-
-[edtAge]
-Coordinates=320,334,55,58
 
 [edtName]
 Coordinates=192,334,66,58

@@ -133,7 +133,7 @@ object Form2: TForm2
           Size.Width = 292.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 0
           object lytDialogCopy: TLayout
             Align = Right
             HitTest = True
@@ -194,81 +194,6 @@ object Form2: TForm2
             end
           end
         end
-        object grpAge: TGroupBox
-          Anchors = []
-          Position.X = 33.000000000000000000
-          Position.Y = 174.000000000000000000
-          Size.Width = 144.000000000000000000
-          Size.Height = 42.000000000000000000
-          Size.PlatformDefault = False
-          Text = 'Personel Ya'#351
-          TabOrder = 2
-          object edtAge: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Client
-            StyleLookup = 'transparentedit'
-            TabOrder = 38
-            Margins.Left = 10.000000000000000000
-            Margins.Top = 15.000000000000000000
-            Size.Width = 134.000000000000000000
-            Size.Height = 27.000000000000000000
-            Size.PlatformDefault = False
-          end
-        end
-        object grpName: TGroupBox
-          Anchors = []
-          Position.X = 33.000000000000000000
-          Position.Y = 78.000000000000000000
-          Size.Width = 144.000000000000000000
-          Size.Height = 41.000000000000000000
-          Size.PlatformDefault = False
-          Text = 'Personel Ad'#305
-          TabOrder = 3
-          object edtName: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Client
-            StyleLookup = 'transparentedit'
-            TabOrder = 38
-            Margins.Left = 10.000000000000000000
-            Margins.Top = 15.000000000000000000
-            Size.Width = 134.000000000000000000
-            Size.Height = 26.000000000000000000
-            Size.PlatformDefault = False
-          end
-        end
-        object grpSurname: TGroupBox
-          Anchors = []
-          Position.X = 33.000000000000000000
-          Position.Y = 130.000000000000000000
-          Size.Width = 144.000000000000000000
-          Size.Height = 38.000000000000000000
-          Size.PlatformDefault = False
-          Text = 'Personel Soyad'#305
-          TabOrder = 0
-          object edtSurname: TEdit
-            Touch.InteractiveGestures = [LongTap, DoubleTap]
-            Align = Client
-            StyleLookup = 'transparentedit'
-            TabOrder = 38
-            Margins.Left = 10.000000000000000000
-            Margins.Top = 15.000000000000000000
-            Size.Width = 134.000000000000000000
-            Size.Height = 23.000000000000000000
-            Size.PlatformDefault = False
-          end
-        end
-        object Label2: TLabel
-          StyledSettings = [Style, FontColor]
-          Position.X = 32.000000000000000000
-          Position.Y = 32.000000000000000000
-          Size.Width = 161.000000000000000000
-          Size.Height = 25.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Family = 'Roboto'
-          TextSettings.Font.Size = 20.000000000000000000
-          Text = 'Personel Bilgileri'
-          TabOrder = 4
-        end
       end
     end
     object rctDetailScrim: TRectangle
@@ -281,6 +206,92 @@ object Form2: TForm2
       Size.PlatformDefault = False
       Visible = False
       OnClick = rctDetailScrimClick
+    end
+    object Layout1: TLayout
+      Position.X = 56.000000000000000000
+      Position.Y = 136.000000000000000000
+      Size.Width = 297.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label2: TLabel
+        Align = Center
+        StyledSettings = [Style, FontColor]
+        Size.Width = 185.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Roboto'
+        TextSettings.Font.Size = 24.000000000000000000
+        Text = 'Personel Bilgileri'
+        TabOrder = 4
+      end
+    end
+    object Layout2: TLayout
+      Position.X = 56.000000000000000000
+      Position.Y = 192.000000000000000000
+      Size.Width = 297.000000000000000000
+      Size.Height = 153.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object grpAge: TGroupBox
+        Position.X = 40.000000000000000000
+        Position.Y = 99.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Personel Ya'#351
+        TabOrder = 1
+        object edtAge: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          StyleLookup = 'transparentedit'
+          TabOrder = 3
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Size.Width = 207.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object grpName: TGroupBox
+        Position.X = 40.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Personel Ad'#305
+        TabOrder = 3
+        object edtName: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          StyleLookup = 'transparentedit'
+          TabOrder = 1
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Size.Width = 207.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object grpSurname: TGroupBox
+        Align = Center
+        Size.Width = 217.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Personel Soyad'#305
+        TabOrder = 2
+        object edtSurname: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          StyleLookup = 'transparentedit'
+          TabOrder = 2
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 15.000000000000000000
+          Size.Width = 207.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
     end
   end
   object Label1: TLabel
@@ -730,6 +741,29 @@ object Form2: TForm2
               'ng'
           end>
         Name = 'updateBlack'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00B2494441546843EDD75B0A83301484E1D46DB8D8AEA6FB70357D720F6D0E24
+              224568622EE3E5FF60C84B399EB155A80380CB78FA7C12639F3D949CE563AA94
+              788433855DB4A7A4DD86709E16057077396FA1A8F5DB286B271E62B5D317A8F1
+              0CEC99B156348F9F901A05D428A04601350AA851408D026A1450A380DA2D0BBC
+              C319D97FDA92ACFDCEFE6B4F81299C2DB49CBD187D669FADBB59129B69B3BBB0
+              0BBD7CEC2BDF5A262736C366755B1E006A71EE0BD6E45892C6365D6D00000000
+              49454E44AE426082}
+            FileName = 
+              'C:\Repos\PersonelOtomasyon\Icons\2x\outline_delete_black_24dp.pn' +
+              'g'
+          end>
+        Name = 'deleteBlack'
       end>
     Destination = <>
     Left = 376
